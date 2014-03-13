@@ -1,0 +1,44 @@
+.filters input{
+	padding-right: 0;
+	padding-left: 0;
+	margin-bottom: 0;
+}
+
+.ui-datepicker{
+	background-color: #fff;
+}
+
+.items .view{
+	border-bottom: 1px solid #cecece;
+	margin-bottom: 5px;
+}
+
+#ticket-grid td.first{
+    width:60px;
+}
+
+.beforeFlightForm .row-fluid{
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.operationSteps .row-fluid {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.main-body .container{min-height: 400px;}
+
+.view-table th{
+	width: 30%;
+}
+
+.round_background img {
+margin-top: 26px;
+/*width: 100px;*/
+}
+
+
+.sp-input input {
+	width: 60px; 
+}
