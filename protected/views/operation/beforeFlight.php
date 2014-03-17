@@ -41,8 +41,8 @@
 		<div class="span8">
 			<?php // echo CHtml::label('1. Entered meal information!', 'mealInfo', array('class'=>'')); ?>
 
-			<label class="" for="mealInfo">1. Entered meal information!
-				<i id="code1" class="icon-question-sign" data-toggle="tooltip" title="( @ r &#x23ce; : 22/|***mob***--18c/cl***157y/cl***)"></i>
+			<label class="" for="">1. Entered meal information!
+				<i id="code1" class="icon-question-sign" data-toggle="tooltip" data-placement="top" title="( @ r &#x23ce; : 22/|***mob***--18c/cl***157y/cl***)"></i>
 			</label>
 			<script type="text/javascript">
 				$('#code1').tooltip("show");

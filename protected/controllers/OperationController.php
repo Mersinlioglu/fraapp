@@ -153,7 +153,7 @@ class OperationController extends Controller
 				}
 				*/
 				//$delayCode->save(false);
-				//$this->render('finish');
+				$this->render('finish');
 			}
 		}
 
