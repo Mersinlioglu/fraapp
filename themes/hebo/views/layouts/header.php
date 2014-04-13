@@ -9,7 +9,7 @@
 	?>
 
   <div class="span6">
-		<a href="" class="logo"></a>
+		<a href="<?php echo $this->createUrl('/site/index'); ?>" class="logo"></a>
   </div><!--/.span6 -->
   <div class="span6" style="margin-top: 10px;">
 		<img class="pull-right"  style="margin-left: 5px; margin-top:3px;" src="<?php echo $baseUrl;?>/img/ico/de-flag.png">
