@@ -42,3 +42,7 @@ margin-top: 26px;
 .sp-input input {
 	width: 60px; 
 }
+
+.outgoing input {
+	width: 60px;
+}

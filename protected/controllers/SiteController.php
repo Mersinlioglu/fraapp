@@ -108,9 +108,11 @@ class SiteController extends Controller
 	}
 
 	public function actionSales(){
-
-		
 		$this->render('sales');
+	}
+
+	public function actionFragate(){		
+		$this->render('fragate');
 	}
 
 	public function actionTkHelp(){

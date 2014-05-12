@@ -65,7 +65,7 @@ class Operation extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('bagage_doors_closed, op_error_log, cabin_config_ccl, cabin_config_ycl, cabin_config_tcl, cabin_pax_ccl, cabin_pax_ycl, cabin_pax_tcl, cabin_inf, cabin_id_dz', 'default'),
+			array('bagage_doors_closed, op_error_log, cabin_config_ccl, cabin_config_ycl, cabin_config_tcl, cabin_pax_ccl, cabin_pax_ycl, cabin_pax_tcl, cabin_inf, cabin_id_dz, technician_id', 'default'),
 			array('user_id, flight_id, aircrafttype_id, registration_id, before_flight_check_time', 'required'),
 
 			array('user_id, flight_id, aircrafttype_id, before_flight_check_time, onblock, door_opened, gettingout_passangers, cleaning, security_check, boarding_business, boarding_economy, doors_closed, pushback, erp_entry_done', 'numerical', 'integerOnly'=>true),
@@ -88,6 +88,7 @@ class Operation extends CActiveRecord
 			'flight' => array(self::BELONGS_TO, 'Flight', 'flight_id'),
 			'registration' => array(self::BELONGS_TO, 'Registration', 'registration_id'),
 			'delayCode' => array(self::HAS_ONE, 'DelayCode', 'opid'),
+			'technician' => array(self::BELONGS_TO, 'User', 'technician_id'),
 		);
 	}
 
@@ -101,7 +102,7 @@ class Operation extends CActiveRecord
 			'user_id' => 'User',
 			'flight_id' => 'Flight',
 			'aircrafttype_id' => 'Aircrafttype',
-			'before_flight_check_time' => 'Checking start time',
+			'before_flight_check_time' => 'Date',
 			'onblock' => 'Onblock',
 			'door_opened' => 'Door Opened',
 			'gettingout_passangers' => 'Gettingout Passangers',
@@ -111,6 +112,7 @@ class Operation extends CActiveRecord
 			'boarding_economy' => 'Boarding Economy',
 			'doors_closed' => 'Doors Closed',
 			'pushback' => 'Pushback',
+			'technician_id' => 'Teknisyen',
 		);
 	}
 

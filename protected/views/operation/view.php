@@ -194,17 +194,15 @@ $this->menu=array(
 <table class="operationSteps table table-striped table-bordered">
 	<tr>
 		<th>Operation Description</th>
-		<th>Check</th>
 		<th>Time</th>
 	</tr>
 	<tr>
 		<td>1. Ucak bilgileri ERP sistemine girildi</td>
 		<td>
 			<div class="row-fluid">
-				<?php echo $model->erp_entry_done; ?>
+				<?php echo $model->erp_entry_done>0 ? Yii::app()->dateFormatter->format('HH:mm:ss, dd MMM yyyy',$model->erp_entry_done) : 'N/A'; ?>
 			</div>
 		</td>
-		<td></td>
 	</tr>
 </table>
 
@@ -227,3 +225,15 @@ $this->menu=array(
 		<td><?php echo $model->getAverageEconomyPresence(); ?></td>
 	</tr>
 </table>
+
+<?php if($model->technician != null): ?>
+<table class="operationSteps table table-striped table-bordered">
+	<tr>
+		<th>Teknisyen</th>
+	</tr>
+	<tr>
+		<td><?php echo $model->technician->name . ' ' . $model->technician->lastname; ?></td>
+	</tr>
+</table>
+<?php endif; ?>
+

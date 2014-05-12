@@ -65,7 +65,9 @@ class TicketController extends Controller
 	{
 		$model=new Ticket;
 		// $model->scenario="create";
-		$model->attributes = $_POST['Ticket'];
+		if (isset($_POST['Ticket'])) {
+			$model->attributes = $_POST['Ticket'];
+		}
 		$model->creator_id = Yii::app()->user->getId();
 
 

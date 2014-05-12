@@ -85,7 +85,7 @@
 
 
 	<!-- Outgoing delay codes -->
-	<table class="table table-striped table-bordered">
+	<table class="table table-striped table-bordered outgoing">
 		<tr>
 			<th colspan="9">OUTGOING DELAY CODES</th>
 		</tr>
@@ -93,18 +93,21 @@
 			<td>
 				<table class="table table-bordered">
 					<tr>
+						<th></th>
 						<th>1</th>
 						<th>2</th>
 						<th>3</th>
 						<th>4</th>
 					</tr>
 					<tr>
+						<th>Code</th>
 						<td><?php echo $form->textField($delayCode, 'cod1'); ?></td>
 						<td><?php echo $form->textField($delayCode, 'cod2'); ?></td>
 						<td><?php echo $form->textField($delayCode, 'cod3'); ?></td>
 						<td><?php echo $form->textField($delayCode, 'cod4'); ?></td>
 					</tr>
 					<tr>
+						<th>Minute</th>
 						<td><?php echo $form->textField($delayCode, 'min1'); ?></td>
 						<td><?php echo $form->textField($delayCode, 'min2'); ?></td>
 						<td><?php echo $form->textField($delayCode, 'min3'); ?></td>
@@ -116,6 +119,10 @@
 	</table>
 	
 
+
+	<?php echo CHtml::label('Teknisyen', 'Operation_technician_id' ,array('class'=>'span4')); ?>
+	<?php echo $form->dropDownList($model,'technician_id', CHtml::listData(User::getAllTechnicians(), 'id', 'username') ); ?>
+	<?php //echo $form->error($model,'aircrafttype_id'); ?>
 
 
 

@@ -25,11 +25,39 @@ class TaskController extends Controller
 			$model->editor_id = Yii::app()->user->getId();
 			$model->accepted = time();
 			$model->save();
+
+
+			$oUser = User::GetLoggedInUser();
+
+
+			$emailBody = "Merhaba " . $oUser->username . "\r\n\r\n";
+			$emailBody .= "'" . $model->title . "' isimli görev " . $oUser->name . " " . $oUser->lastname . " tarafindan üstlenilmistir.\r\n\r\n";
+
+  			$contactMailer = new Mailer();
+  			$contactMailer->addAddress($model->oCreator->email);
+  			$contactMailer->setSubject("Task assigned: " . $model->title);
+  			$contactMailer->setBody($emailBody);
+  			$contactMailer->setAutoSignature();
+  			$contactMailer->send();
+
 		}
 
 		if(isset($_POST['setAsDone'])) {
 			$model->done = time();
 			$model->save();
+
+
+			$oUser = User::GetLoggedInUser();
+
+			$emailBody = "Merhaba " . $oUser->username . "\r\n\r\n";
+			$emailBody .= "'" . $model->title . "' isimli görev " . $oUser->name . " " . $oUser->lastname . " tarafindan tamamlanmistir.\r\n\r\n";
+
+			$contactMailer = new Mailer();
+			$contactMailer->addAddress($model->oCreator->email);
+			$contactMailer->setSubject("Task done: " . $model->title);
+			$contactMailer->setBody($emailBody);
+			$contactMailer->setAutoSignature();
+			$contactMailer->send();
 		}
 
 		$this->render('view',array(

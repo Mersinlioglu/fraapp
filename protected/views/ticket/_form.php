@@ -30,11 +30,11 @@
 	<div class="row">
 		<?php
 		if($model->start_date){	
-			$start_date=date("d.m.Y",strtotime($model->start_date));
-			$end_date=date("d.m.Y",strtotime($model->end_date));
+			$start_date = date("d.m.Y",strtotime($model->start_date));
+			$end_date = date("d.m.Y",strtotime($model->end_date));
 		}else {
-			$start_date='';
-			$end_date='';
+			$start_date = '';
+			$end_date = '';
 		}
 
 		$model->start_date = $start_date;

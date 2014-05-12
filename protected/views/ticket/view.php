@@ -39,7 +39,7 @@ $this->menu=array(
 		array(
             'label'=>'Accepted',
             'type'=>'raw',
-            'value'=> date("d.m.Y, H:i:s",$model->accepted),
+            'value'=> $model->accepted != "" ? $model->accepted : 'N/A',
         ),
 		array(
             'label'=>'Done',

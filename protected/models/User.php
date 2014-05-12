@@ -199,5 +199,12 @@ class User extends CActiveRecord
 		}
 	}
 
+	public static function getAllTechnicians() {
+		$criteria = new CDbCriteria();
+		$criteria->condition = 'type = 3';
+		$criteria->order = 'name DESC';
+		return self::model()->findAll($criteria);
+	}
+
 
 }

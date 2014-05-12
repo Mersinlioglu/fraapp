@@ -32,7 +32,8 @@
 		</div>
 		<div class="span4">
 			<?php echo CHtml::label('A/C REG*', 'Operation_aircrafttype_id' ,array('class'=>'span4')); ?>
-			<?php echo $form->dropDownList($model,'registration_id', CHtml::listData(Registration::model()->findAll(), 'id', 'code') ); ?>
+			<?php // echo $form->dropDownList($model,'registration_id', CHtml::listData(Registration::model()->findAll(), 'id', 'code') ); ?>
+			<?php echo $form->textField($model,'registration_id'); ?>
 			<?php echo $form->error($model,'aircrafttype_id'); ?>
 		</div>
 	</div>
